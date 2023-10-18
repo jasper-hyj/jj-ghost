@@ -1,0 +1,13 @@
+{
+    "nav": {
+        "c_lang": "中文",
+        "c_lang_link": "/zh/"
+    },
+    "test": "test",
+    "not_found": {
+        "title": "404 Not Found",
+        "content": "Could not find requested resource",
+        "link": "/en/",
+        "link_content": "Return Home"
+    }
+}
