@@ -1,3 +1,5 @@
-export default function Page() {
-    return <h1>Hello, Anime Page!</h1>
-  }
+"use server";
+
+export default async function Page() {
+	return <h1>Hello, Anime Page!</h1>;
+}
