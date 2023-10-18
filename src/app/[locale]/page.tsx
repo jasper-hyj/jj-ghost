@@ -11,8 +11,17 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page({ params }: { params: { locale: string } }) {
 	const dict = await getDictionary(params.locale);
 	return (
-		<main className="main">
-			<p></p>
+		<main className="px-3">
+			<h1>Jasper the Friendly Ghost</h1>
+			<p className="lead">Welcome to my Website</p>
+			<p className="lead">
+				<a
+					href="#"
+					className="btn btn-lg btn-light fw-bold border-white bg-white"
+				>
+					Learn more
+				</a>
+			</p>
 		</main>
 	);
 }
