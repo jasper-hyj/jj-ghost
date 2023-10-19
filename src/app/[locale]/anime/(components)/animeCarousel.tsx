@@ -1,90 +1,13 @@
-"use client";
-import Image from "next/image";
+"use server";
+import AnimeCarouselList from "../(repository)/animeRepository";
 
-export default function animeCarousel() {
+export default async function animeCarousel() {
 	return (
 		<div
 			id="carouselExampleCaptions"
 			className="carousel slide carousel-fade w-100 mt-3"
 		>
-			<div className="carousel-indicators">
-				<button
-					type="button"
-					data-bs-target="#carouselExampleCaptions"
-					data-bs-slide-to="0"
-					className="active"
-					aria-current="true"
-					aria-label="Slide 1"
-				></button>
-				<button
-					type="button"
-					data-bs-target="#carouselExampleCaptions"
-					data-bs-slide-to="1"
-					aria-label="Slide 2"
-				></button>
-				<button
-					type="button"
-					data-bs-target="#carouselExampleCaptions"
-					data-bs-slide-to="2"
-					aria-label="Slide 3"
-				></button>
-			</div>
-			<div className="carousel-inner">
-				<div className="carousel-item active">
-					<Image
-						width={0}
-						height={0}
-						sizes="100vw"
-						style={{ width: "100%", height: "75%" }}
-						className="d-block"
-						src="/static/anime_carousel/urban-day-view.jpg"
-						alt=""
-					/>
-					<div className="carousel-caption d-none d-md-block">
-						<h5>First slide label</h5>
-						<p>
-							Some representative placeholder content for the
-							first slide.
-						</p>
-					</div>
-				</div>
-				<div className="carousel-item">
-					<Image
-						width={0}
-						height={0}
-						sizes="100vw"
-						style={{ width: "100%", height: "auto" }}
-						className="d-block"
-						src="/static/anime_carousel/urban-night-view.jpg"
-						alt="..."
-					/>
-					<div className="carousel-caption d-none d-md-block">
-						<h5>Second slide label</h5>
-						<p>
-							Some representative placeholder content for the
-							second slide.
-						</p>
-					</div>
-				</div>
-				<div className="carousel-item">
-					<Image
-						width={0}
-						height={0}
-						sizes="100vw"
-						style={{ width: "100%", height: "auto" }}
-						className="d-block"
-						src="/static/anime_carousel/wp3632092-pc-4k-japan-anime-wallpapers.jpg"
-						alt="..."
-					/>
-					<div className="carousel-caption d-none d-md-block">
-						<h5>Third slide label</h5>
-						<p>
-							Some representative placeholder content for the
-							third slide.
-						</p>
-					</div>
-				</div>
-			</div>
+			<AnimeCarouselList />
 			<button
 				className="carousel-control-prev"
 				type="button"

@@ -4,27 +4,28 @@ generator client {
 
 datasource db {
   provider  = "postgresql"
-  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
 model User {
   id        String      @id @default(cuid())
   name      String?
   email     String?     @unique
-  createdAt DateTime    @default(now()) @map(name: "created_at")
-  updatedAt DateTime    @updatedAt @map(name: "updated_at")
+  createdAt DateTime    @default(now()) @map("created_at")
+  updatedAt DateTime    @updatedAt @map("updated_at")
   AnimePost AnimePost[]
 
-  @@map(name: "users")
+  @@map("users")
 }
 
 model AnimePost {
   id        Int      @id @default(autoincrement())
-  imagePath String?
+  imagePath String
   userId    String
-  user      User     @relation(fields: [userId], references: [id])
-  createdAt DateTime @default(now()) @map(name: "created_at")
-  updatedAt DateTime @updatedAt @map(name: "updated_at")
+  animeName String
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
   context   String   @default("")
+  user      User     @relation(fields: [userId], references: [id])
 }

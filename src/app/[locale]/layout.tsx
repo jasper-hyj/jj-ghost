@@ -1,6 +1,5 @@
 "use server";
 import "./global.css";
-import Image from "next/image";
 import Icon from "./(components)/icon";
 import { getDictionary } from "./dictionaries";
 export default async function RootLayout({
