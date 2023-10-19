@@ -1,7 +1,7 @@
 "use server";
 import "./global.css";
-import Icon from "./(components)/icon";
 import { getDictionary } from "./dictionaries";
+import Nav from "./(components)/nav";
 export default async function RootLayout({
 	children,
 	params,
@@ -13,44 +13,7 @@ export default async function RootLayout({
 	return (
 		<div className="h-100 text-center">
 			<div className="d-flex w-100 h-100  mx-auto flex-column">
-				<header className="p-3 mb-auto container">
-					<div>
-						<a
-							className="navbar-brand float-md-start mb-0 align-middle"
-							href="/"
-						>
-							<div
-								className="d-flex align-items-center justify-content-between
-							"
-							>
-								<Icon />
-								<span className="navbar-brand mb-0 h1 fs-3">
-									{dict.nav.title}
-								</span>
-							</div>
-						</a>
-						<nav className="nav nav-masthead justify-content-center float-md-end">
-							<a
-								className="nav-link fw-bold py-1 text-dark"
-								href={"/" + params.locale + "/programming"}
-							>
-								{dict.nav.programming}
-							</a>
-							<a
-								className="nav-link fw-bold py-1 text-dark"
-								href={"/" + params.locale + "/anime"}
-							>
-								{dict.nav.anime}
-							</a>
-							<a
-								className="nav-link fw-bold py-1 text-dark"
-								href={dict.nav.c_lang_link}
-							>
-								{dict.nav.c_lang}
-							</a>
-						</nav>
-					</div>
-				</header>
+				<Nav dict={dict} locale={params.locale} />
 				{children}
 				<div className="mt-auto container">
 					<footer className="py-1 my-2">
