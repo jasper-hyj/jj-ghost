@@ -32,13 +32,13 @@ export default async function RootLayout({
 						<nav className="nav nav-masthead justify-content-center float-md-end">
 							<a
 								className="nav-link fw-bold py-1 text-dark"
-								href="/programming"
+								href={"/" + params.locale + "/programming"}
 							>
 								{dict.nav.programming}
 							</a>
 							<a
 								className="nav-link fw-bold py-1 text-dark"
-								href="/anime"
+								href={"/" + params.locale + "/anime"}
 							>
 								{dict.nav.anime}
 							</a>

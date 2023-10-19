@@ -28,6 +28,6 @@ model AnimePost {
   updatedAt  DateTime @updatedAt @map("updated_at")
   context    String   @default("")
   animeDescr String   @default("")
-  locale     String   @default("us")
+  locale     String   @default("en")
   user       User     @relation(fields: [userId], references: [id])
 }
