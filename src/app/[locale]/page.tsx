@@ -12,6 +12,7 @@ export default async function Page({ params }: { params: { locale: string } }) {
 	const dict = await getDictionary(params.locale);
 	return (
 		<main className="px-3">
+			<style>{"body{ height: 100% }"}</style>
 			<h1>Jasper the Friendly Ghost</h1>
 			<p className="lead">Welcome to my Website</p>
 			<p className="lead">

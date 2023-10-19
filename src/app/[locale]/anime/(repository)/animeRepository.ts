@@ -1,7 +1,7 @@
 "use server";
 import { PrismaClient } from "@prisma/client";
 import animeList from "./anime.json"
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 export async function getAnimeCarousel(locale: string) {
 	// const animeList = await prisma.animePost.findMany({
 	// 	where: {
@@ -15,4 +15,4 @@ export async function getAnimeCarousel(locale: string) {
 	return animeList.filter((anime) => { return anime.locale === locale });
 }
 
-prisma.$disconnect();
+// prisma.$disconnect();

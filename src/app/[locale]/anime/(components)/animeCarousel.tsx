@@ -7,7 +7,7 @@ export default async function AnimeCarousel({ locale }: { locale: string }) {
 	return (
 		<div
 			id="anime-carousel"
-			className="carousel slide carousel-fade w-100 mt-3"
+			className="carousel slide carousel-fade w-100"
 			data-bs-ride="carousel"
 		>
 			<div className="carousel-indicators">

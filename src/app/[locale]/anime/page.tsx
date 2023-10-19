@@ -1,5 +1,5 @@
 "use server";
 
 export default async function Page() {
-	return <h1></h1>;
+	return <div></div>;
 }
