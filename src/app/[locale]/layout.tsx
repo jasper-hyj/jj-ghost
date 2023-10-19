@@ -13,8 +13,8 @@ export default async function RootLayout({
 	const dict = await getDictionary(params.locale);
 	return (
 		<div className="h-100 text-center">
-			<div className="container d-flex w-100 h-100 p-3 mx-auto flex-column">
-				<header className="mb-auto">
+			<div className="d-flex w-100 h-100  mx-auto flex-column">
+				<header className="p-3 mb-auto container">
 					<div>
 						<a
 							className="navbar-brand float-md-start mb-0 align-middle"
