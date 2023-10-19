@@ -1,7 +1,10 @@
 {
-    "nav": {
-        "c_lang": "English",
-        "c_lang_link": "/en/"
-    },
-    "test": "測試"
+	"nav": {
+		"title": "JJ Ghost",
+		"gropramming": "鬼打Code",
+		"anime": "鬼才看動漫",
+		"c_lang": "English",
+		"c_lang_link": "/en/"
+	},
+	"test": "測試"
 }

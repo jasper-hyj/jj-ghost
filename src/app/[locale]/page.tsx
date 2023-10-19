@@ -19,7 +19,7 @@ export default async function Page({ params }: { params: { locale: string } }) {
 					href="#"
 					className="btn btn-lg btn-light fw-bold border-white bg-white"
 				>
-					Learn more
+					More About Me...
 				</a>
 			</p>
 		</main>
