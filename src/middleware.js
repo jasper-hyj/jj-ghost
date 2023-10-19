@@ -19,7 +19,7 @@ export function middleware(request) {
   )
  
   if (pathnameHasLocale) return
-  if (pathname.endsWith(".js")) return
+  if (pathname.startsWith(`/static/`)) return
  
   // Redirect if there is no locale
   const locale = getLocale(request)

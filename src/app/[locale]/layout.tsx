@@ -12,7 +12,7 @@ export default async function RootLayout({
 }) {
 	const dict = await getDictionary(params.locale);
 	return (
-		<div className="h-100 d-flex text-center">
+		<div className="h-100 text-center">
 			<div className="container d-flex w-100 h-100 p-3 mx-auto flex-column">
 				<header className="mb-auto">
 					<div>
@@ -35,7 +35,7 @@ export default async function RootLayout({
 								className="nav-link fw-bold py-1 text-dark"
 								href="/programming"
 							>
-								{dict.nav.gropramming}
+								{dict.nav.programming}
 							</a>
 							<a
 								className="nav-link fw-bold py-1 text-dark"
