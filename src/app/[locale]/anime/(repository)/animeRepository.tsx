@@ -1,16 +1,10 @@
 "use server";
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
-export async function getAnimeCarousel() {
+export async function getAnimeCarousel(locale: string) {
 	const animePosts = await prisma.animePost.findMany({
-		select: {
-			id: true,
-			imagePath: true,
-			animeName: true,
-			userId: true,
-			createdAt: true,
-			updatedAt: true,
-			context: true,
+		where: {
+			locale: locale,
 		},
 		orderBy: {
 			updatedAt: "desc",

@@ -20,12 +20,14 @@ model User {
 }
 
 model AnimePost {
-  id        Int      @id @default(autoincrement())
-  imagePath String
-  userId    String
-  animeName String
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
-  context   String   @default("")
-  user      User     @relation(fields: [userId], references: [id])
+  id         Int      @id @default(autoincrement())
+  imagePath  String   @default("")
+  userId     String
+  animeName  String   @default("")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+  context    String   @default("")
+  animeDescr String   @default("")
+  locale     String   @default("us")
+  user       User     @relation(fields: [userId], references: [id])
 }
