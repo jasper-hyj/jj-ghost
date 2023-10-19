@@ -1,17 +1,49 @@
 "use server";
-import AnimeCarouselList from "../(repository)/animeRepository";
+import { getAnimeCarousel } from "../(repository)/animeRepository";
+import AnimeCarouselImage from "./animeCarouseImage";
 
 export default async function animeCarousel() {
+	const animePosts = await getAnimeCarousel();
 	return (
 		<div
-			id="carouselExampleCaptions"
+			id="anime-carousel"
 			className="carousel slide carousel-fade w-100 mt-3"
 		>
-			<AnimeCarouselList />
+			<div className="carousel-indicators">
+				{animePosts.map((animePost, index) => (
+					<button
+						key={animePost.id}
+						type="button"
+						data-bs-target="#anime-carousel"
+						data-bs-slide-to={index}
+						className={index == 0 ? "active" : ""}
+						aria-current={index == 0 ? "true" : "false"}
+						aria-label={"Slide" + (index + 1)}
+					></button>
+				))}
+			</div>
+			<div className="carousel-inner" style={{ height: "500px" }}>
+				{animePosts.map((animePost, index) => (
+					<div
+						key={animePost.id}
+						className={
+							index == 0
+								? "active carousel-item w-100 h-100"
+								: "carousel-item w-100 h-100"
+						}
+					>
+						<AnimeCarouselImage src={animePost.imagePath!} />
+						<div className="carousel-caption d-none d-md-block">
+							<h4>{animePost.animeName}</h4>
+							<p>{animePost.context}</p>
+						</div>
+					</div>
+				))}
+			</div>
 			<button
 				className="carousel-control-prev"
 				type="button"
-				data-bs-target="#carouselExampleCaptions"
+				data-bs-target="#anime-carousel"
 				data-bs-slide="prev"
 			>
 				<span
@@ -23,7 +55,7 @@ export default async function animeCarousel() {
 			<button
 				className="carousel-control-next"
 				type="button"
-				data-bs-target="#carouselExampleCaptions"
+				data-bs-target="#anime-carousel"
 				data-bs-slide="next"
 			>
 				<span
