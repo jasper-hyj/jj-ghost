@@ -8,6 +8,7 @@ export default async function AnimeCarousel({ locale }: { locale: string }) {
 		<div
 			id="anime-carousel"
 			className="carousel slide carousel-fade w-100 mt-3"
+			data-bs-ride="carousel"
 		>
 			<div className="carousel-indicators">
 				{animePosts.map((animePost, index) => (
@@ -31,6 +32,7 @@ export default async function AnimeCarousel({ locale }: { locale: string }) {
 								? "active carousel-item w-100 h-100"
 								: "carousel-item w-100 h-100"
 						}
+						data-bs-interval="5000"
 					>
 						<AnimeCarouselImage src={animePost.imagePath!} />
 						<div className="carousel-caption d-none d-md-block">

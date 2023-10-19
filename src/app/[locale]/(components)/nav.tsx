@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 
 export default function Nav({ dict, locale }: { dict: any; locale: string }) {
 	const pathName = usePathname().slice(4);
-	console.log(pathName);
 	return (
 		<header className="p-3 mb-auto container">
 			<div>
