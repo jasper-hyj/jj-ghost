@@ -2,7 +2,7 @@
 import { getAnimeCarousel } from "../(repository)/animeRepository";
 import AnimeCarouselImage from "./animeCarouseImage";
 
-export default async function animeCarousel({ locale }: { locale: string }) {
+export default async function AnimeCarousel({ locale }: { locale: string }) {
 	const animePosts = await getAnimeCarousel(locale);
 	return (
 		<div

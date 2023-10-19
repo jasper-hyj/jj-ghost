@@ -2,7 +2,7 @@
 import Icon from "./icon";
 import { usePathname } from "next/navigation";
 
-export default function nav({ dict, locale }: { dict: any; locale: string }) {
+export default function Nav({ dict, locale }: { dict: any; locale: string }) {
 	const pathName = usePathname().slice(4);
 	console.log(pathName);
 	return (

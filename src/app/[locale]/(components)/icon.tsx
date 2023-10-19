@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-export default function icon() {
+export default function Icon() {
 	return (
 		<Image
 			src="/static/icon/icon.svg"
