@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-export default function AnimeCarousel({ src }: { src: string }) {
+export default function AnimeCarouselImg({ src }: { src: string }) {
 	return (
 		<Image
 			width={0}

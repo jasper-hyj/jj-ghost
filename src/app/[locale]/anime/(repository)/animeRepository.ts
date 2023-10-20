@@ -41,6 +41,20 @@ export async function getAnimeCarousel(locale: string) {
 	// 	where a.locale = "${locale}"
 	// 	order by a.updateAt DESC`
 	// );
+
+
+	const animePost = animeList.filter((anime) => anime.locale === locale);
+	animePost.sort((a, b) => {
+		if (a.updateAt > b.updateAt) {
+			return -1;
+		} else {
+			return 1;
+		}
+	});
+	return animePost.slice(0, 3);
+}
+
+export async function getAnimeCard(locale: string) {
 	const animePost = animeList.filter((anime) => anime.locale === locale);
 	animePost.sort((a, b) => {
 		if (a.updateAt > b.updateAt) {
