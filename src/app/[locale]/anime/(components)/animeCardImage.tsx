@@ -12,6 +12,7 @@ export default function AnimeCardImg({ src }: { src: string }) {
 			role="img"
 			src={src}
 			alt=""
+			priority
 		/>
 	);
 }
