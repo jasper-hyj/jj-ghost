@@ -1,7 +1,6 @@
 "use server";
 
 import { getAnimeCard } from "../(repository)/animeRepository";
-import AnimeCardImg from "./animeCardImage";
 
 export default async function AnimeCard({ locale }: { locale: string }) {
 	const animeCards = await getAnimeCard(locale);
@@ -20,7 +19,13 @@ export default async function AnimeCard({ locale }: { locale: string }) {
 						className="link-underline link-underline-opacity-0"
 					>
 						<div className="card">
-							<AnimeCardImg src={animeCard.imagePath} />
+							<img
+								style={{ width: "100%", height: "auto" }}
+								className="bd-placeholder-img card-img-top"
+								role="img"
+								src={animeCard.imagePath}
+								alt=""
+							/>
 
 							<div className="card-body">
 								<h5 className="card-title">

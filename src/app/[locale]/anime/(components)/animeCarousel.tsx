@@ -1,7 +1,5 @@
 "use server";
 import { getAnimeCarousel } from "../(repository)/animeRepository";
-import AnimeCarouselImg from "./animeCarouselImage";
-import { AnimePost } from "../(repository)/animeRepository";
 
 export default async function AnimeCarousel({ locale }: { locale: string }) {
 	const animePosts = await getAnimeCarousel(locale);
@@ -35,7 +33,14 @@ export default async function AnimeCarousel({ locale }: { locale: string }) {
 						}
 						data-bs-interval="5000"
 					>
-						<AnimeCarouselImg src={animePost.imagePath!} />
+						<img
+							width={0}
+							height={0}
+							sizes="100vw"
+							className="d-block object-fit-cover w-100 h-100"
+							src={animePost.imagePath!}
+							alt=""
+						/>
 						<div className="carousel-caption d-none d-md-block">
 							<h4>{animePost.animeName}</h4>
 							<p>{animePost.animeDescr}</p>
