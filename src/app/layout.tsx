@@ -22,20 +22,18 @@ export default async function RootLayout({
 			<body className="w-100">
 				{children}
 				{/* Static js */}
-				<Script
-					src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
-					integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
-					crossOrigin="anonymous"
-					async
-				/>
-
 				<Script type="text/javascript" src="/static/js/style.js" />
 				<Script
 					type="text/javascript"
 					src="/static/js/bootstrap.bundle.min.js"
 				/>
 				<Script id="resize-script">
-					window.dispatchEvent(new Event(&quot;resize&quot;));
+					var tag = document.createElement("script"); tag.src =
+					"https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js";
+					tag.integrity =
+					"sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D";
+					tag.crossOrigin = "anonymous";
+					document.getElementsByTagName("body")[0].appendChild(tag);
 				</Script>
 			</body>
 		</html>
