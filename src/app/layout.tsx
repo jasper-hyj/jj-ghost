@@ -38,7 +38,7 @@ export default async function RootLayout({
 					type="text/javascript"
 					src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
 				/>
-				<Script>
+				<Script id="resize-script">
 					window.onload = window.dispatchEvent(new Event('resize'));
 				</Script>
 			</body>
