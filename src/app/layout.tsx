@@ -22,18 +22,26 @@ export default async function RootLayout({
 			<body className="w-100">
 				{children}
 				{/* Static js */}
-				<Script
-					src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
-					integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
-					crossOrigin="anonymous"
-					async
-				/>
 
 				<Script type="text/javascript" src="/static/js/style.js" />
 				<Script
 					type="text/javascript"
 					src="/static/js/bootstrap.bundle.min.js"
 				/>
+				<Script
+					strategy="beforeInteractive"
+					src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+				></Script>
+				<Script>
+					{`
+					Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+						var tag = document.createElement("script");
+						tag.src = "https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js";
+						tag.crossOrigin = "anonymous"
+						tag.integrity = "sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
+						document.getElementsByTagName("body")[0].appendChild(tag);
+					});`}
+				</Script>
 			</body>
 		</html>
 	);

@@ -15,6 +15,7 @@ export default async function AnimeCard({ locale }: { locale: string }) {
 				<div className="col-sm-6 col-lg-4 mb-4" key={animeCard.id}>
 					<div className="card">
 						<AnimeCardImg src={animeCard.imagePath} />
+
 						<div className="card-body">
 							<h5 className="card-title">
 								{animeCard.animeName}
