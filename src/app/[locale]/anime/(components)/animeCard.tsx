@@ -6,11 +6,7 @@ import AnimeCardImg from "./animeCardImage";
 export default async function AnimeCard({ locale }: { locale: string }) {
 	const animeCards = await getAnimeCard(locale);
 	return (
-		<div
-			className="row"
-			data-masonry='{"percentPosition": true }'
-			style={{ position: "relative", height: "100%" }}
-		>
+		<div className="row" data-masonry='{"percentPosition": true }'>
 			{animeCards.map((animeCard, index) => (
 				<div className="col-sm-6 col-lg-4 mb-4" key={animeCard.id}>
 					<div className="card">

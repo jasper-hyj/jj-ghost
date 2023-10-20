@@ -34,6 +34,13 @@ export default async function RootLayout({
 					type="text/javascript"
 					src="/static/js/bootstrap.bundle.min.js"
 				/>
+				<Script
+					type="text/javascript"
+					src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+				/>
+				<Script>
+					window.onload = window.dispatchEvent(new Event('resize'));
+				</Script>
 			</body>
 		</html>
 	);
