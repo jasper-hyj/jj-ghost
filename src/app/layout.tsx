@@ -28,11 +28,7 @@ export default async function RootLayout({
 					type="text/javascript"
 					src="/static/js/bootstrap.bundle.min.js"
 				/>
-				<Script
-					strategy="beforeInteractive"
-					src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-				></Script>
-				<Script>
+				<Script id="image-loading-script">
 					{`
 					Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
 						var tag = document.createElement("script");
