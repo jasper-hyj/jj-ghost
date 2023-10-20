@@ -51,7 +51,7 @@ export async function getAnimeCarousel(locale: string) {
 			return 1;
 		}
 	});
-	return animePost.slice(0, 3);
+	return animePost.slice(0, 5);
 }
 
 export async function getAnimeCard(locale: string) {
@@ -63,6 +63,11 @@ export async function getAnimeCard(locale: string) {
 			return 1;
 		}
 	});
+	return animePost;
+}
+
+export async function getAnimeBlog(locale: string, id: string) {
+	const animePost = animeList.filter((anime) => anime.locale == locale && anime.id == id)[0];
 	return animePost;
 }
 
