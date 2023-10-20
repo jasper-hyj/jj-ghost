@@ -35,8 +35,7 @@ export default async function RootLayout({
 					src="/static/js/bootstrap.bundle.min.js"
 				/>
 				<Script id="resize-script">
-					window.onload = window.dispatchEvent(new
-					Event(&quot;resize&quot;));
+					window.dispatchEvent(new Event(&quot;resize&quot;));
 				</Script>
 			</body>
 		</html>
